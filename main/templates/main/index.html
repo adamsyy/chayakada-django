@@ -1,7 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
+
   <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,18 +14,18 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Watcher</title>
+  <title>Seeds</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Dosis:400,500|Poppins:400,700&display=swap" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 </head>
@@ -36,7 +38,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand" href="index.html">
             <span>
-              Watcher
+              Seeds
             </span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +55,7 @@
                   <a class="nav-link" href="about.html"> About </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="watch.html"> Our Watches </a>
+                  <a class="nav-link" href="watch.html"> Our Seeds </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">Contact us</a>
@@ -88,11 +90,10 @@
                       <div class="slider_item-detail">
                         <div>
                           <h1>
-                            Stylish watches
+                            Coffeeee in an instant!
                           </h1>
-                          <p>
-                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco l
+                          <p>Our coffee masters have distilled their years of tasting knowledge down to three simple coffee recipies.
+                            Delicious, handcrafted beverages and great-tasting food. The secret to making life better.
                           </p>
                           <div class="d-flex">
                             <a href="" class="slider-btn1 mr-3">
@@ -211,13 +212,11 @@
           <div class="col-md-5 offset-md-2">
             <div class="about_detail-box">
               <h3 class="custom_heading ">
-                About our watch
+                About our Coffees
               </h3>
               <p class="">
-                It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                of
-                letters, as opposed to using 'Content here, content here', making it
+                Our Frappuccino® drinks were made for summer fun. Treat yourself to Mocha Cookie Crumble or Caramel Ribbon Crunch.
+                Keep the laid-back vibes going. Order your favourite coffee on Seeds
               </p>
               <div>
                 <a href="">
@@ -244,14 +243,29 @@
       <div class="container">
         <div class="brand_heading">
           <h3 class="custom_heading">
-            Our watch brands
+            Our Seeds
           </h3>
           <p class="font-weight-bold">
-            It is a long established fact that a reader will be distracted by the readable content of a page
+            It is a long established fact that you will have a tough time choosing your coffee seed
           </p>
         </div>
       </div>
       <div class="container-fluid brand_item-container">
+        <div class="brand_item-box">
+          <div class="brand_img-box  item-1">
+            <a href="">
+              View More
+            </a>
+          </div>
+          <div class="brand_detail-box">
+            <h5>
+              $<span> 40 </span>
+            </h5>
+            <h6 class="">
+              best watch
+            </h6>
+          </div>
+        </div>
         <div class="brand_item-box">
           <div class="brand_img-box  item-1">
             <a href="">
@@ -327,6 +341,21 @@
             </h6>
           </div>
         </div>
+        <div class="brand_item-box">
+          <div class="brand_img-box  item-1">
+            <a href="">
+              View More
+            </a>
+          </div>
+          <div class="brand_detail-box">
+            <h5>
+              $<span> 40 </span>
+            </h5>
+            <h6 class="">
+              best watch
+            </h6>
+          </div>
+        </div>
       </div>
 
     </section>
@@ -338,7 +367,7 @@
     <section class="why_section layout_padding">
       <div class="container">
         <h3 class="custom_heading">
-          Why choose Us
+          Why Seeds
         </h3>
         <p class="font-weight-bold">
           It is a long established fact that a reader will be distracted by the readable content of a page

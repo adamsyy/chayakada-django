@@ -15,7 +15,12 @@
       <input type="text" id="login" class="fadeIn second" name="username" placeholder="username">
       <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Log in!">
+      
     </form>
+    <a href="{% url 'signup' %}">
+   <h5 style="color:grey;">
+   Dont have an account? Sign up
+   </h5> </a>
 {{error}}
     <!-- Remind Passowrd -->
     <div id="formFooter">

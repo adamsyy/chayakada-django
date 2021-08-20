@@ -16,15 +16,27 @@ Including another URLconf
 
 from main import views
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
+from rest_framework import routers
+from rest_framework.authtoken import views as authviews
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+router.register(r'mains', views.MainViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/',views.signup,name="signup"),
     path('loginuser/',views.loginuser,name="loginuser"),
+    path('home',views.home,name="home"),
+     path('', include(router.urls)),
+     path('api-token-auth/', authviews.obtain_auth_token),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
+    
 
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
