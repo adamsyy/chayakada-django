@@ -10,6 +10,7 @@ from .serializers import UserSerializer, GroupSerializer,MainSerializer
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import AllowAny
 from rest_framework.decorators import permission_classes
+from .forms import Todoform 
 # Create your views here. 
 
 def signup(request):
@@ -18,7 +19,8 @@ def signup(request):
     else:
         user=User.objects.create_user(request.POST['username'],password=request.POST['password'])
         user.save()
-        return render(request,'main/home.html')
+        main=Main.objects.all()
+        return render(request,'main/home.html',{'main':main})
 
 
 def loginuser(request):
@@ -30,16 +32,18 @@ def loginuser(request):
             return render(request,'main/loginuser.html',{'error':"credentials does not match"})
         else:
             login(request,user)  
-            
-            return render(request,'main/index.html')
+            main=Main.objects.all()
+            return render(request,'main/index.html',{'main':main})
             
 
 
 def home(request):
     if request.method=='GET':
-        return render(request,'main/index.html')       
+        main=Main.objects.all()
+        return render(request,'main/index.html',{'main':main})       
     if request.user.is_authenticated:
-        return render(request,'main/index.html')
+        main=Main.objects.all()
+        return render(request,'main/index.html',{'main':main})
     else:
         return render(request,'main/loginuser.html')
 
@@ -72,7 +76,12 @@ class MainViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]    
 
 
-
+def addtocart(request):
+    form=Todoform(request.POST)
+    newtodo=form.save(commit=False)
+    newtodo.user=request.user
+    newtodo.save()
+    return render(request,'main/cart.html')
 
 
 
