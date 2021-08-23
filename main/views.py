@@ -39,9 +39,10 @@ def loginuser(request):
 
 
 def home(request):
-    if request.method=='GET':
+    if request.method=='POST':
         main=Main.objects.all()
-        return render(request,'main/index.html',{'main':main})       
+        return render(request,'main/index.html',{'main':main})
+               
     if request.user.is_authenticated:
         main=Main.objects.all()
         return render(request,'main/index.html',{'main':main})
