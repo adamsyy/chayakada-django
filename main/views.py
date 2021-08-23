@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.models import User, Group
 from .models import Main
+from .models import Todoform as todoformmodel
 from rest_framework import viewsets
 from rest_framework import permissions
 from .serializers import UserSerializer, GroupSerializer,MainSerializer
@@ -86,7 +87,9 @@ def addtocart(request):
 
 
 
-
+def cart(request):
+    todos=todoformmodel.objects.filter(user=request.user)
+    return render(request,'main/cart.html',{'todos':todos})
 
 
 

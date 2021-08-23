@@ -34,6 +34,7 @@ urlpatterns = [
     path('home',views.home,name="home"),
      path('', include(router.urls)),
      path('addtocart/',views.addtocart,name="addtocart"),
+     path('cart/',views.cart,name="cart"),
      path('api-token-auth/', authviews.obtain_auth_token),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
