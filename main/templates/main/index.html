@@ -251,111 +251,34 @@
         </div>
       </div>
       <div class="container-fluid brand_item-container">
+     {% for main1 in main %}
         <div class="brand_item-box">
-          <div class="brand_img-box  item-1">
-            <a href="">
-              View More
-            </a>
+          <div class="brand_img-box">
+          <img src="{{main1.image.url}}" height="100">
+            
           </div>
           <div class="brand_detail-box">
             <h5>
-              $<span> 40 </span>
+              <span>{{main1.title}} </span>
             </h5>
             <h6 class="">
-              best watch
+             $ {{main1.id}}
             </h6>
+            <h6><form method="POST" action="{% url 'addtocart' %}">
+            {% csrf_token %}
+            <input hidden   value="{{main1.id}}">
+            
+           
+            <input hidden name="price" value="{{main1.price}}">
+            <input hidden name="title" value="{{main1.title}}">
+            
+            <button  type="submit">Add to cart</button>
+            </form></h6>
           </div>
+      
         </div>
-        <div class="brand_item-box">
-          <div class="brand_img-box  item-1">
-            <a href="">
-              View More
-            </a>
-          </div>
-          <div class="brand_detail-box">
-            <h5>
-              $<span> 40 </span>
-            </h5>
-            <h6 class="">
-              best watch
-            </h6>
-          </div>
-        </div>
-        <div class="brand_item-box">
-          <div class="brand_img-box  item-2">
-            <a href="">
-              View More
-            </a>
-          </div>
-          <div class="brand_detail-box">
-            <h5>
-              $<span> 50 </span>
-            </h5>
-            <h6 class="">
-              best watch
-            </h6>
-          </div>
-        </div>
-        <div class="brand_item-box">
-          <div class="brand_img-box  item-3">
-            <a href="">
-              View More
-            </a>
-          </div>
-          <div class="brand_detail-box">
-            <h5>
-              $<span> 60 </span>
-            </h5>
-            <h6 class="">
-              best watch
-            </h6>
-          </div>
-        </div>
-        <div class="brand_item-box">
-          <div class="brand_img-box  item-4">
-            <a href="">
-              View More
-            </a>
-          </div>
-          <div class="brand_detail-box">
-            <h5>
-              $<span> 70 </span>
-            </h5>
-            <h6 class="">
-              best watch
-            </h6>
-          </div>
-        </div>
-        <div class="brand_item-box">
-          <div class="brand_img-box  item-5">
-            <a href="">
-              View More
-            </a>
-          </div>
-          <div class="brand_detail-box">
-            <h5>
-              $<span> 80 </span>
-            </h5>
-            <h6 class="">
-              best watch
-            </h6>
-          </div>
-        </div>
-        <div class="brand_item-box">
-          <div class="brand_img-box  item-1">
-            <a href="">
-              View More
-            </a>
-          </div>
-          <div class="brand_detail-box">
-            <h5>
-              $<span> 40 </span>
-            </h5>
-            <h6 class="">
-              best watch
-            </h6>
-          </div>
-        </div>
+      {% endfor %}
+        
       </div>
 
     </section>
