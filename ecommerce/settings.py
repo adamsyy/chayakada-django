@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django',
+        'ENGINE': 'djongo',
         'NAME': 'chayakada',
     }
 }
